@@ -1,27 +1,29 @@
-const student = "Ким Вадим Максимович"; 
-const test = 0.3;
+const student = "Ким Вадим Максимович"; // Очевидно, что здесь ваши личные Фамилия, Имя и Отчество
 
-function throwRandomError(percent) {
-    const randomNumber = Math.floor(Math.random() * 10 + 1);
-    const newPercent = percent * 10; 
-    if (percent < 0 || percent > 1) {
-     throw new Error('Необходимо число от 0.0 до 1.0');
-    };
-    if (test.toString().length > 3) {
-     throw new Error('Только одна цифра поле точки!')
-    };
-    if (randomNumber <= newPercent) {
-     throw new Error('Упс, произошла ошибка!');
-     };
- };
- 
- try {
-     throwRandomError(test);
-     alert('Всё в порядке, приложение работает в обычном режиме');
- } catch(e) {
-     alert(`Произошла ошибка, пожалуйста перезагрузите страницу. Сообщение ошибки: ${e.message}`);
- }
- 
- document.getElementById("student").innerHTML = student;
- Footer
- 
+document.getElementById("student").innerHTML = student;
+
+// Отсюда и ниже идет ваш код решения домашнего задания
+// ...
+
+const error_chance = 0.2;
+
+function throwRandomError(chance) {
+    let max_chance = 1.0;
+    let min_chance = 0.0;
+    if ((chance < min_chance) || (chance > max_chance)) {
+    }
+    
+    random_number = Math.random(max_chance).toFixed(1);
+    console.log(`Случайное число: ${random_number}`);
+    if (random_number <= chance) {
+        throw new Error('Ой, что-то сломалось');
+    }
+}
+
+
+try {
+    throwRandomError(error_chance);
+    console.log('Всё в порядке, приложение работает в штатном режиме');
+} catch (e) {
+    console.log(`Произошла ошибка, пожалуйста перезагрузите страницу`);
+}
